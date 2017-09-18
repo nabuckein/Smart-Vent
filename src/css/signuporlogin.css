@@ -1,0 +1,22 @@
+html{
+	font-size:20px;
+	padding:0;
+	font-family: 'Advent Pro';
+	
+}
+
+body{
+	padding:0;
+	background: #22d0ff;
+	background-size: cover;
+	font-size:4em;
+	color:white;
+	height:100%;
+}
+#root{
+	height: 100%;
+}
+
+.actionTitle{
+	text-align: center;
+}

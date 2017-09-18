@@ -1,0 +1,20 @@
+.NavigationBar{
+	display: flex;
+	justify-content: center;
+	background-color: white;
+	margin-top:5px;
+}
+.navBarTitle{
+	background:white;
+	color: #22d0ff;
+	font-family: 'Poiret One';
+	font-size:1.4rem;
+	margin:0;
+	margin-right: 5px;
+	margin-left: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.navBarTitle:hover{
+	color: #6600aa;
+}

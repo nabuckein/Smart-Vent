@@ -1,0 +1,21 @@
+
+.roomsDiv{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	font-family: 'Advent Pro';	
+	width: 50%;
+	margin-right: auto;
+	margin-left: auto;
+}
+@media screen and (max-width: 1000px){
+	.roomsDiv{
+		width: 90%;
+	}
+}
+@media screen and (max-width: 750px){
+	.roomsDiv{
+		width: 100%;
+	}
+}
+

@@ -1,0 +1,99 @@
+.Login{
+	text-align: center;
+	height: 100%;
+}
+.welcomeDivLogin{
+	height: 100%;
+}
+.secondaryTitleLogin{
+	color:white;
+	font-size: 2.5rem;
+	font-family: 'Philosopher';
+}
+.actionTitleLogin{
+	font-size: 1.5rem;
+	font-family: 'Saira Extra Condensed';
+}
+.inputFieldsLogin{
+	display:flex;
+	flex-wrap: wrap;
+	width:20%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top:1%;
+
+}
+.loginInputField{
+	width:100%;
+	height:40px;
+	border:none;
+	border-radius: 6px;
+	margin-top: 8px;
+	font-size: 0.2em;
+	padding-top:5px;
+	padding-bottom: 5px;
+	text-align: center;
+	color:#0000aa;
+}
+.buttonsDiv{
+	
+	width: 100%;
+	display:flex;
+	flex-wrap: wrap;
+	margin-top:2%;
+
+}
+.buttons{
+	background-color: #0000aa;
+	color:white;
+	font-size:0.3em;
+	font-family: 'Saira Extra Condensed';
+	border:none;
+	border-radius: 6px;
+	height: 50px;
+	width: 100%;
+	margin-left:40%;
+	margin-right:40%;
+	margin-top:10px;
+}
+.buttons:hover{
+	background-color: #0000cc; 
+}
+.buttons:active{
+	background-color: #0000ff; 
+}
+
+
+
+@media (max-width: 481px) {
+	.secondaryTitleLogin{
+		font-size: 35%;
+	}
+	.actionTitleLogin{
+		font-size: 30%;
+	}
+	.inputFieldsLogin{		
+		width:80%;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top:5%;
+		margin-bottom: 10%;
+	}
+	.loginInputField{
+		height:25px;
+		margin-top: 8px;
+		font-size: 0.15em;
+		padding-top:5px;
+		padding-bottom: 5px;
+	}
+	.buttons{
+		margin-left:10%;
+		margin-right:10%;
+		margin-top:6px;
+	}
+	.buttons:hover{
+		background-color: #0000cc; 
+	}
+	
+
+}

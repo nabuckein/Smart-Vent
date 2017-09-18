@@ -1,0 +1,65 @@
+
+.InitialSetup{
+	text-align: center;
+}
+.initialSetupTitle{
+	margin-top: 5%;
+	margin-bottom:5%;
+	font-size:0.5em;
+	font-family: 'Advent Pro';
+}
+.inputFieldsAndLabels{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	height: 200px;
+}
+.inputsAndLabelsRows{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 60%;
+	height: 50px;
+	text-align: center;
+	align-items: center;
+}
+.setupLabels{
+	font-family: 'Advent Pro';
+	font-size:0.3em;
+	text-align: center;
+	width:30%;
+
+}
+.setupInputFields{
+	background: #22d0ff;
+	border:none;
+	border-bottom:solid 2px white;
+	border-radius: 3px;
+	font-size: 0.25em;
+	width:20%;
+	height: 45px;
+	color: white;
+	text-align: center;
+}
+.setupInputFields:hover{
+	border-bottom:solid 2px purple;
+	color: purple;
+}
+.setupInputFields:focus{
+	border-bottom:solid 2px blue;
+	color: blue;
+
+}
+#nameForRoomLabel{
+	width:25%;
+}
+#nameForRoomInput{
+	width:20%;
+}
+#amountOfVentsLabel{
+	width: 35%;
+}
+#amountOfVentsInput{
+	width:10%;
+	font-size:0.5em;
+}

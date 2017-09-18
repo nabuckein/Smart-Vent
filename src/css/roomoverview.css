@@ -1,0 +1,61 @@
+.RoomOverview{
+	width:30%;
+	margin-top: 20px;	
+}
+.rooms{
+	width:100%;
+	height: 100%;		
+	background: rgb(30,225,0);
+	border-style: solid;
+	border-color: transparent;
+	border-width: 3px;
+	border-radius: 5px;
+
+}
+.rooms:hover{
+	border-style: solid;
+	border-width: 3px;
+	border-color: white;
+	border-radius: 5px;
+	cursor: grab;
+}
+.rooms:active{
+	border-style: solid;
+	border-width: 3px;
+	border-color: yellow;
+	border-radius: 5px;
+
+}
+.roomsName{
+	font-size: 1.5rem;
+}
+.roomsTemp{
+	margin-bottom: 0;
+	margin-top: 30px;
+}
+
+.fa{
+	font-size:0.5em;
+	margin-left:10px;
+	margin-right: 10px;
+}
+.fa:hover{
+	color:green;
+}
+
+@media screen and (max-width: 1000px){
+	.RoomOverview{
+		width:50%;
+	}
+	.roomsTemp{
+		font-size: 1.0em;
+	}
+}
+@media screen and (max-width: 750px){
+	.RoomOverview{
+		width:30%;
+	}
+	.roomsTemp{
+		font-size: 0.75em;
+	}
+}
