@@ -16,7 +16,7 @@ class Readings extends Component {
 
     this.user = firebase.auth().currentUser;
     this.rooms = null;
-    this.amountOfRooms;
+    this.amountOfRooms = 0;
 
     this.state={
       amountOfRooms:0,
@@ -28,7 +28,7 @@ class Readings extends Component {
 
   componentWillMount=(e)=>{
     var currentUser = firebase.auth().currentUser;
-    var roomsObj = null;
+    //var roomsObj = null;
     firebase.database().ref('Users/' + currentUser.displayName + '/amountOfRooms').on('value',(snapshot)=> {
       this.setState({amountOfRooms : snapshot.val()})
       // ...
@@ -92,17 +92,20 @@ class Readings extends Component {
       
       for(var n in this.state.rooms){
         //console.log(this.state.rooms[n].Name);
-        roomsArr.push(<RoomOverview title={n} toRoomSettings={this.toRoomSettings}/>);
+        roomsArr.push(<RoomOverview key={"roomOverview" + n} title={n} toRoomSettings={this.toRoomSettings}/>);
       }
-      roomsArr.push(<AddRoom showRoomSetup={this.toRoomSetup} />);
+      roomsArr.push(<AddRoom key={"addRoom0"} showRoomSetup={this.toRoomSetup} />);
     }else if(this.state.componentToDisplay === 'initialsetup'){
-      roomsArr.push(<RoomSetup saveRoomInfoAndShowRooms={this.saveRoomInfoAndShowRooms} cancel={this.toRoomOverview}/>);
+      roomsArr.push(<RoomSetup key={"roomSetup0"} saveRoomInfoAndShowRooms={this.saveRoomInfoAndShowRooms} cancel={this.toRoomOverview}/>);
     }else if(this.state.componentToDisplay === 'roomsettings'){
-      roomsArr.push(<RoomSettings toRoomOverview={this.toRoomOverview}/>);
+      roomsArr.push(<RoomSettings key={"roomSettings0"} toRoomOverview={this.toRoomOverview}/>);
     }
 
     return (
       <div className="Readings">
+
+        {/*<h1 className="secondaryTitle" id="titleDynamic">WELCOME</h1>*/}
+
         <div className="roomsDiv">
 
           {roomsArr}          

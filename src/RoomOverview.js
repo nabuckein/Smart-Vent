@@ -11,7 +11,7 @@ class RoomOverview extends Component {
     super(props);   
 
 	    this.user = firebase.auth().currentUser;
-	    this.amountOfRooms;
+	    this.amountOfRooms = 0;
 	    this.state = {
 	      amountOfRooms:0,
 	    }
@@ -28,7 +28,7 @@ class RoomOverview extends Component {
   	handleRemoveRoom=(e)=>{
   		//this.amountOfRooms--;
 	    //firebase.database().ref('Users/' + this.user.displayName + '/amountOfRooms').set(this.amountOfRooms);
-	    var rooms;
+	    //var rooms;
 	    firebase.database().ref('Users/' + this.user.displayName + '/rooms/' + this.props.title).remove();
 	    
   	}	

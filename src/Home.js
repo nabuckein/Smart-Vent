@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Readings from './Readings';
 import RoomDetails from './RoomDetails';
-import RoomSetup from './RoomSetup';
+//import RoomSetup from './RoomSetup';
 
 
 import './css/home.css';
@@ -23,7 +23,7 @@ class Home extends Component {
     }
   }
 
-
+  /*
   componentDidMount=(e)=>{
     console.log("HOME MOUNTED!");
   }
@@ -31,7 +31,7 @@ class Home extends Component {
   componentDidUpdate=(e)=>{
     
     
-  }
+  }*/
 
   componentWillMount=(e)=>{
     var currentUser = firebase.auth().currentUser;
@@ -71,15 +71,12 @@ class Home extends Component {
     
     //}
 
-    var email = "Test";
-
 
     return (
         <div className="Home">            
             <div className="welcomeDiv row">
                 
-                <h1 className="secondaryTitle" id="titleDynamic">WELCOME {email}</h1>
-                
+               
                 {this.display}
                 
             </div>
