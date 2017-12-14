@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Readings from './Readings';
 import RoomDetails from './RoomDetails';
+import Radium from 'radium';
+import {StyleRoot} from 'radium';
 //import RoomSetup from './RoomSetup';
-
-
-import './css/home.css';
-  
+ 
 var firebase = require("firebase");
 
 
@@ -73,15 +72,17 @@ class Home extends Component {
 
 
     return (
-        <div className="Home">            
-            <div className="welcomeDiv row">
-                
-               
-                {this.display}
-                
+        <div>
+          <StyleRoot>
+            <div className="Home">            
+                <div className="welcomeDiv row">
+                    
+                   
+                    {this.display}
+                    
+                </div>
             </div>
-
-            
+          </StyleRoot>
         </div>
     );
   }

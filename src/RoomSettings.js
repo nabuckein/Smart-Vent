@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import './roomsettings.css';
 var Particle = require('particle-api-js');
 
 class RoomSettings extends Component{
@@ -12,7 +11,7 @@ class RoomSettings extends Component{
         this.particle.login({username: 'pauri@hotmail.com', password: 'Nabuckein1984'}).then(
 	        (data)=>{
 	          this.token = data.body.access_token;
-	          console.log(data.statusCode);
+	          console.log(data.statusCode + "token = " + this.token);
 	          //document.getElementById('loginResponse').innerHTML = data.body.access_token;    
 	        },
 	        function(err) {
@@ -21,15 +20,22 @@ class RoomSettings extends Component{
 	        }
         );
 
-    	
+    		
 
 	}
 
 	rotateToOpen=(e)=>{
-		this.particle.callFunction({deviceId: '2b0034000447343337373737', name: 'rotateOpen' ,argument: '', auth: this.token})
+		this.particle.callFunction({deviceId: '42004b001051353532343635', name: 'rotateOpen' ,argument: '', auth: this.token}).then(
+  function(data) {
+    console.log('Function called succesfully:', data);
+  }, function(err) {
+    console.log('An error occurred:', err);
+  });
+		console.log("rotateToOpen clicked!");
 	}
 	rotateToClose=(e)=>{
-		this.particle.callFunction({deviceId: '2b0034000447343337373737', name: 'rotateClose' ,argument: '', auth: this.token})
+		this.particle.callFunction({deviceId: '42004b001051353532343635', name: 'rotateClose' ,argument: '', auth: this.token});
+		console.log("rotateToClose clicked!");
 	}
 
 	render(){
@@ -59,13 +65,26 @@ export default RoomSettings;
 const styles = {
 	RoomSettings:{
 		fontSize:'35px',
-		textAlign:'center'
+		textAlign:'center',
+		width:'100%'
+	},
+	buttonsDiv:{
+		width:'100%'
 	},
 	buttonsText:{
-		fontSize: '25px'
+		fontSize: '25px',
+		width:'100%'
 	},
 	backgroundVideo:{
-		zIndex:'-1'
+		position: 'fixed',
+	    top: '50%',
+	    left: '50%',
+	    minWidth: '100%',
+	    minWeight: '100%',
+	    width: 'auto',
+	    height: 'auto',
+	    zIndex: '-100',
+	    transform: 'translate(-50%, -50%)'
 
 	}
 }

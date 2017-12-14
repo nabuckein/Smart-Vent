@@ -3,8 +3,9 @@ import RoomOverview from './RoomOverview';
 import AddRoom from './AddRoom';
 import RoomSetup from './RoomSetup';
 import RoomSettings from './RoomSettings';
-import './css/readings.css';
 
+import Radium from 'radium';
+import {StyleRoot} from 'radium';
 var firebase = require("firebase");
 
 
@@ -42,11 +43,7 @@ class Readings extends Component {
     
   }
 
-  componentWillUpdate=(e)=>{
-
-    
-  }
-
+  
   toRoomOverview=(e)=>{
     this.setState({componentToDisplay:'rooms'});
   }
@@ -102,22 +99,56 @@ class Readings extends Component {
     }
 
     return (
-      <div className="Readings">
+      <div>
+        <StyleRoot>
+          <div className="Readings">
 
-        {/*<h1 className="secondaryTitle" id="titleDynamic">WELCOME</h1>*/}
+            {/*<h1 className="secondaryTitle" id="titleDynamic">WELCOME</h1>*/}
 
-        <div className="roomsDiv">
+            <div className="roomsDiv" style={styles.roomsDiv}>
+              {/*<video style={styles.backgroundVideo} id="background-video" style={styles.backgroundVideo} loop autoPlay>
+                <source src="media/video/TimeLapseSunset.mov" type="video/mp4" />
+              Your browser does not support the video tag.
+              </video>*/}
+              {roomsArr}          
 
-          {roomsArr}          
 
-
-        </div>
-    </div>
+            </div>
+          </div>
+        </StyleRoot>
+      </div>
     );
   }
 }
 
 export default Readings;
+
+const styles = {
+  roomsDiv:{
+    
+    fontFamily: 'Advent Pro',
+    display:'grid',
+    gridTemplateColumns: 'repeat(auto-fit, 400px)',
+    gridTemplateRows: 'repeat(auto-fit, 400px)',
+    marginLeft:100,
+    marginRight:100
+
+
+  },
+  backgroundVideo:{
+    position: 'fixed',
+      top: '50%',
+      left: '50%',
+      minWidth: '100%',
+      minWeight: '100%',
+      width: 'auto',
+      height: 'auto',
+      zIndex: '-100',
+      transform: 'translate(-50%, -50%)'  
+  }
+
+}
+
 
 
 /*

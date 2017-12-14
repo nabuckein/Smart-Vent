@@ -60,16 +60,16 @@ class Signup extends Component {
                 <h1 className="actionTitle">Please Sign Up</h1>
 
                 <div className="inputFields">
-                  <input className="signupInputField" id="firstnameSignup" placeholder="First name or your nickname"></input>
-                  <input className="signupInputField" id="lastnameSignup" placeholder="Last name (optional)"></input>
-                  <input className="signupInputField" id="passwordSignup" placeholder="Password"></input>
-                  <input className="signupInputField" id="emailSignup" placeholder="E-mail address"></input>    
+                  <input className="signupInputField" id="firstnameSignup" style={styles.inputs} placeholder="First name or your nickname"></input>
+                  <input className="signupInputField" id="lastnameSignup" style={styles.inputs} placeholder="Last name (optional)"></input>
+                  <input className="signupInputField" id="passwordSignup" style={styles.inputs} placeholder="Password"></input>
+                  <input className="signupInputField" id="emailSignup" style={styles.inputs} placeholder="E-mail address"></input>    
                 </div>   
             </div>
 
-            <div className="buttonsDiv">
-              <button className="submitSignupButton buttons" onClick={this.handleSubmitClick}>SUBMIT</button>
-              <button className="cancelSignupButton buttons" onClick={this.props.back} >CANCEL</button>
+            <div className="buttonsDiv" style={styles.buttonsDiv}>
+              <button className="submitSignupButton buttons" onClick={this.handleSubmitClick} style={styles.buttons}>SUBMIT</button>
+              <button className="cancelSignupButton buttons" onClick={this.props.back} style={styles.buttons}>CANCEL</button>
             </div>
         </div>
     );
@@ -77,3 +77,15 @@ class Signup extends Component {
 }
 
 export default Signup;
+
+const styles = {
+  inputs:{
+    fontSize:20
+  },
+  buttonsDiv:{
+
+  },
+  buttons:{
+    fontSize:24
+  }
+}

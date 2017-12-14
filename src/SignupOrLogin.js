@@ -5,7 +5,6 @@ import Login from './Login';
 import NavigationBar from './NavigationBar';
 
 
-import './css/signuporlogin.css';
   
 
 var firebase = require("firebase");
@@ -105,3 +104,4 @@ class SignupOrLogin extends Component {
 }
 
 export default SignupOrLogin;
+
