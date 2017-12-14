@@ -1,20 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <!--
+    <meta name="viewport" content="width=device-width, initial-scale=1">    <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/particle-api-js/5/particle.min.js">
+
+    </script>
+    <script>
+      var particle = new Particle();
+      var token;
+      particle.login({username: 'pauri@hotmail.com', password: 'Nabuckein1984'}).then(
+        function(data){
+          token = data.body.access_token;
+          console.log(data.statusCode);
+          //document.getElementById('loginResponse').innerHTML = data.body.access_token;    
+        },
+        function(err) {
+          //document.getElementById('loginResponse').innerHTML = 'API call completed on promise fail: ' + err;
+          console.log('API call completed on promise fail: ', err);
+        }
+      );
     </script>
     <link rel="stylesheet" type="text/css" href="./css/index.css">
-    <link rel="stylesheet" type="text/css" href="./css/index480andUnder.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Farsan|Saira+Extra+Condensed|Philosopher|Audiowide|Advent+Pro|BenchNine|Pathway+Gothic+One|Righteous|Yanone+Kaffeesatz|Amatic+SC|Cabin|Rubik+Mono+One|Poiret+One|Bahiana|Permanent+Marker|Days+One|Bangers|Luckiest+Guy|Bubblegum+Sans|Righteous|Black+Ops+One|Monoton|Shadows+Into+Light' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--script type="text/javascript" src="./javascript/randomTempGenerator.js"></script>
@@ -36,9 +48,16 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>SmartVent</title>
   </head>
-  <body>
+  <body>    
+    
+    <!--video id="background-video" loop autoPlay>
+      <source src="media/video/backgroundVideo.mp4" type="video/mp4" />
+      <source src="media/video/backgroundVideo.mp4" type="video/ogg" />
+      <source src="media/video/backgroundVideo.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video-->
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
